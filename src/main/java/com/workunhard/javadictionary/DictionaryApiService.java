@@ -24,7 +24,7 @@ public class DictionaryApiService {
     public DictionaryEntry[] getDefinitions(String word) {
         if (word == null || word.trim().isEmpty()) {
             logger.log(Level.WARNING, "Word is null or empty");
-            return new DictionaryEntry[0]; // Return empty array for null or empty word
+            return new DictionaryEntry[0]; // Return blanked array for null or empty word
         }
         try {
             // Construct URI with the user-inputted word
@@ -53,7 +53,7 @@ public class DictionaryApiService {
 
         } catch (Exception e) {
             logger.log(Level.SEVERE, "An error occurred while fetching definitions for '" + word + "'", e);
-            return new DictionaryEntry[0]; // Return empty array or handle error case appropriately
+            return new DictionaryEntry[0]; // Return blanked array
         }
     }
 
